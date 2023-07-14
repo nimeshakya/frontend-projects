@@ -11,6 +11,7 @@
     --baground-primary: #dad7cd;
     --text-primary: #344e41;
     --secondary-color: #588157;
+    --tertiary-accent-color: #b149e6;
 
     /* Fonts */
     --display-font: 'Ubuntu', sans-serif;
@@ -39,18 +40,55 @@ header nav {
     width: 100vw;
     max-width: 1920px;
 }
-.site-logo {
+.site-logo-container {
     margin-bottom: 20px;
     text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.site-logo h1 {
+.site-logo-container h1 {
     display: block;
     font-family: var(--display-font);
     font-size: 3rem;
     text-align: center;
 }
-.site-logo p {
+.site-logo-container p {
     font-size: 12px;
+}
+
+.site-actions-status-container {
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.site-action-icon-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    color: var(--text-font-primary);
+    position: relative;
+}
+.site-action-icon-outline {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+.site-action-count {
+    font-size: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 5px;
+    color: var(--baground-primary);
+    background-color: var(--tertiary-accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    top: -1rem;
+    right: -1.2rem;
 }
 
 header nav ul {
