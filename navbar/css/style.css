@@ -37,17 +37,25 @@ header {
 }
 
 /* scrolled nav styles */
-.scrolled-nav {
+#scrolled-navbar {
     width: 100vw;
-    max-width: 1920px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     padding: 20px 50px;
     position: fixed;
-    top: 0;
     background-color: var(--baground-primary);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     z-index: 100;
+    transition: top 0.2s ease-in-out;
+}
+
+.scrolled-nav-container {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
 }
 
 .site-logo-icon {
@@ -63,11 +71,20 @@ header {
     right: 50px;
 }
 
+.scrolled-nav-hidden {
+    top: -100px;
+}
+.scrolled-nav-visible {
+    top: 0;
+}
+
 /* unscrolled nav styles */
 .unscrolled-nav {
     padding: 40px 50px 10px 50px;
     width: 100vw;
     max-width: 1920px;
+    position: sticky;
+    top: 0;
 }
 .site-logo-container {
     margin-bottom: 20px;
@@ -93,7 +110,6 @@ header {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    right: 0;
 }
 .unscrolled-nav .site-actions-status-container {
     right: 0;
@@ -141,10 +157,10 @@ header {
 
 /* navbar visibility class */
 .nav-invisible {
-    display: none;
+    visibility: hidden;
 }
 .nav-visible {
-    display: block;
+    visibility: visible;
 }
 
 main {
