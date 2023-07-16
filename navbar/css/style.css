@@ -35,7 +35,36 @@ header {
     align-items: center;
     flex-direction: column;
 }
-header nav {
+
+/* scrolled nav styles */
+.scrolled-nav {
+    width: 100vw;
+    max-width: 1920px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    background-color: var(--baground-primary);
+    z-index: 100;
+}
+
+.site-logo-icon {
+    margin-right: 50px;
+    font-size: 2rem;
+}
+
+.site-logo-icon h1 {
+    font-family: var(--display-font);
+}
+
+.scrolled-nav .site-actions-status-container {
+    right: 50px;
+}
+
+/* unscrolled nav styles */
+.unscrolled-nav {
     padding: 40px 50px 10px 50px;
     width: 100vw;
     max-width: 1920px;
@@ -66,6 +95,9 @@ header nav {
     position: absolute;
     right: 0;
 }
+.unscrolled-nav .site-actions-status-container {
+    right: 0;
+}
 
 .site-action-icon-filled {
     font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
@@ -91,23 +123,66 @@ header nav {
     right: -1.2rem;
 }
 
-header nav ul {
+.page-nav-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header nav ul li {
+.page-nav-btn-container li {
     margin: 0 40px;
     font-size: 1.2rem;
     display: block;
     padding: 10px;
 }
-header nav ul li:hover {
+.page-nav-btn-container li:hover {
     cursor: pointer;
+}
+
+/* navbar visibility class */
+.nav-invisible {
+    display: none;
+}
+.nav-visible {
+    display: block;
 }
 
 main {
     width: 100vw;
     max-width: 1920px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main article {
+    width: calc(50% - 20px);
+    height: 50vh;
+    margin: 10px;
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+footer {
+    width: 100vw;
+    background-color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer section {
+    width: 100%;
+    max-width: 1920px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 40px 0;
+    color: var(--baground-primary);
 }
