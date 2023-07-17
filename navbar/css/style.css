@@ -36,6 +36,42 @@ header {
     flex-direction: column;
 }
 
+/* ham nav styles */
+.ham-navbar {
+    width: 100vw;
+    padding: 25px 50px;
+    position: fixed;
+    top: 0;
+    background-color: var(--baground-primary);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.ham-navbar-container {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.ham-page-nav-btn-container {
+    position: absolute;
+}
+
+.nav-toggle-btn {
+    font-size: 1.2rem;
+    margin-right: 40px;
+}
+
+.ham-site-logo h1 {
+    font-family: var(--display-font);
+    font-size: 2rem;
+}
+
 /* scrolled nav styles */
 #scrolled-navbar {
     width: 100vw;
@@ -163,14 +199,14 @@ main {
     max-width: 1920px;
     margin-top: 10px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
 main article {
-    width: calc(50% - 20px);
-    height: 50vh;
+    width: 500px;
+    height: 400px;
     margin: 10px;
     border: 2px solid var(--text-primary);
     color: var(--text-primary);
@@ -196,4 +232,37 @@ footer section {
     font-size: 1.5rem;
     padding: 40px 0;
     color: var(--baground-primary);
+}
+
+@media screen and (max-width: 1100px) {
+    .page-nav-btn-container li {
+        font-size: 1rem;
+        margin: 0 20px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .ham-navbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #scrolled-navbar {
+        display: none;
+    }
+    #unscrolled-navbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 60%;
+    }
+
+    main article {
+        width: 250px;
+        height: 200px;
+    }
 }
