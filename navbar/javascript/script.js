@@ -1,6 +1,12 @@
 const unscrolledNav = document.getElementById('unscrolled-navbar');
 const scrolledNav = document.getElementById('scrolled-navbar');
 
+const sidebarOpenBtn = document.getElementById('sidebar-open-btn');
+const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+const sidebarNav = document.getElementById('sidebar-nav');
+const modalBackground = document.getElementById('modal-background');
+
+// navbar change on scroll functionality
 window.addEventListener('scroll', () => {
     let stuck = false;
     let scrollY = window.scrollY;
@@ -23,4 +29,39 @@ window.addEventListener('scroll', () => {
         );
         stuck = false;
     }
+});
+
+// sidebar visibility functionality
+sidebarOpenBtn.addEventListener('click', () => {
+    sidebarNav.classList.replace(
+        'ham-page-nav-btn-container-hidden',
+        'ham-page-nav-btn-container-visible'
+    );
+
+    modalBackground.classList.replace(
+        'modal-background-hidden',
+        'modal-background-visible'
+    );
+});
+sidebarCloseBtn.addEventListener('click', () => {
+    sidebarNav.classList.replace(
+        'ham-page-nav-btn-container-visible',
+        'ham-page-nav-btn-container-hidden'
+    );
+
+    modalBackground.classList.replace(
+        'modal-background-visible',
+        'modal-background-hidden'
+    );
+});
+modalBackground.addEventListener('click', () => {
+    sidebarNav.classList.replace(
+        'ham-page-nav-btn-container-visible',
+        'ham-page-nav-btn-container-hidden'
+    );
+
+    modalBackground.classList.replace(
+        'modal-background-visible',
+        'modal-background-hidden'
+    );
 });
