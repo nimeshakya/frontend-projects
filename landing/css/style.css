@@ -335,6 +335,13 @@ footer {
     justify-content: flex-start;
 }
 
+.p-author p span {
+    border-bottom: 1px solid var(--primary-color);
+}
+.p-author p span:hover {
+    cursor: pointer;
+}
+
 #scroll-top-btn {
     margin: 0 40px;
     width: 50px;
