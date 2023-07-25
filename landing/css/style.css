@@ -11,7 +11,7 @@
     --font-montserrot: 'Montserrat', sans-serif;
 
     --primary-color: #161953;
-    --secondary-color: #e3ecff;
+    --secondary-color: #ffffff;
     --secondary-darken-color: #aeaeae;
 }
 
@@ -77,14 +77,19 @@ main {
 
 #home {
     width: 100%;
-    height: 100vh;
     background: #1619539f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .clock-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clock {
     width: 600px;
     height: 600px;
     position: relative;
@@ -93,6 +98,7 @@ main {
 .clock-container > div > svg {
     width: 100%;
     height: 100%;
+    background-color: red;
 }
 
 .clock-hands {
@@ -151,4 +157,143 @@ main {
 
 .social-link:hover {
     cursor: pointer;
+}
+
+#aboutAndSubscribe {
+    width: 100%;
+    background: linear-gradient(to bottom, #1619539f, #f6f9ffc4);
+    padding-top: 100px;
+}
+.down-arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50vh;
+}
+
+.arrow-container {
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.arrow-container:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#about-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.about {
+    width: 500px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-roboto);
+}
+
+.about-title {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.about p {
+    margin: 2rem 0 5rem 0;
+    width: 90%;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.about-subscribe {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+#subscribe-form {
+    margin: 10px 0 50px 0;
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#subscribe-form label[for='email'] {
+    width: 100%;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.input-container {
+    width: 100%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.input-container input {
+    width: calc(100% - 170px);
+    height: 36px;
+    padding: 10px 10px;
+    border: none;
+    border: solid 1px var(--primary-color);
+}
+
+.input-container input:hover {
+    border: 3px solid var(--primary-color);
+}
+.input-container input:required:focus:invalid {
+    border: 3px solid #ff2121;
+}
+.input-container input:valid {
+    border: 3px solid var(--primary-color);
+}
+
+.input-container button {
+    width: 160px;
+    height: 36px;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+}
+
+.input-container button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+}
+
+.about-social-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-social-links .social-link {
+    margin: 0 10px;
+    color: var(--primary-color);
 }
