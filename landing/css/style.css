@@ -51,6 +51,9 @@ header {
     padding: 5rem 1.5rem 2rem 1.5rem;
     letter-spacing: 2px;
 }
+.site-logo-container a {
+    color: var(--secondary-color);
+}
 
 header nav {
     width: 100%;
@@ -65,12 +68,13 @@ header ul {
     align-items: flex-end;
 }
 
-.site-nav-btn {
+.site-nav-btn a {
     margin-left: 40px;
     font-size: 1.2rem;
+    color: var(--secondary-color);
 }
 
-.site-nav-btn:hover {
+.site-nav-btn a:hover {
     cursor: pointer;
     color: var(--secondary-darken-color);
 }
