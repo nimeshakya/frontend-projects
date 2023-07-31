@@ -5,6 +5,7 @@
     border: 0;
     outline: 0;
     list-style-type: none;
+    text-decoration: none;
 }
 
 :root {
@@ -47,14 +48,17 @@ nav ul {
     color: var(--primary-color);
 }
 
-nav ul li {
+nav ul li a {
     margin: 0 50px;
     padding: 10px;
     transition: color 0.1s linear;
     letter-spacing: 2px;
+    color: var(--primary-color);
+    display: inline-block;
+    padding: 10px;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
     cursor: pointer;
     color: var(--tertiary-color);
 }
