@@ -190,6 +190,15 @@ main {
     align-items: center;
     font-size: 1.2rem;
     color: var(--secondary-color);
+    transition: opacity 1s linear, transform 0.5s ease-out;
+}
+.down-arrow-invisible {
+    opacity: 0;
+    transform: translate(0, 200px);
+}
+.down-arrow-visible {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 .arrow-container:hover {
@@ -308,6 +317,19 @@ input {
 .about-social-links .social-link {
     margin: 0 10px;
     color: var(--primary-color);
+}
+.transition-objects {
+    transition: opacity 1s linear, transform 0.5s ease-in;
+}
+.object-invisible {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, 200px);
+}
+.object-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
 }
 
 footer {
