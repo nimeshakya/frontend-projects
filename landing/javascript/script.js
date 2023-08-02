@@ -1,9 +1,14 @@
 const scrollTopBtn = document.getElementById('scroll-top-btn');
+const scrollDownBtn = document.getElementById('scroll-down-btn');
 const scrollInvisibleItems = document.querySelectorAll('.object-invisible');
 const scrollTop = () => {
     console.log('hello');
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+};
+
+const scrollDown = () => {
+    document.getElementById('about-container').scrollIntoView();
 };
 
 const windowScrollEvents = () => {
@@ -38,4 +43,5 @@ const windowScrollEvents = () => {
 };
 
 scrollTopBtn.addEventListener('click', scrollTop);
+scrollDownBtn.addEventListener('click', scrollDown);
 window.addEventListener('scroll', windowScrollEvents);
