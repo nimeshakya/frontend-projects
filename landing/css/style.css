@@ -171,13 +171,12 @@ main {
 }
 
 .social-link {
-    color: var(--secondary-color);
-    padding: 5px;
     font-size: 1.2rem;
 }
 
-.social-link:hover {
-    cursor: pointer;
+.social-link a {
+    color: var(--secondary-color);
+    padding: 10px 15px;
 }
 
 #aboutAndSubscribe {
@@ -327,7 +326,7 @@ input {
     justify-content: center;
     align-items: center;
 }
-.about-social-links .social-link {
+.about-social-links .social-link a {
     margin: 0 10px;
     color: var(--primary-color);
 }
@@ -380,11 +379,12 @@ footer {
     justify-content: flex-start;
 }
 
-.p-author p span {
+.p-author p a {
+    color: var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
 }
-.p-author p span:hover {
-    cursor: pointer;
+.p-author p a:hover {
+    color: var(--header-color);
 }
 
 #scroll-top-btn {
