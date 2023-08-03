@@ -326,8 +326,12 @@ input {
     justify-content: center;
     align-items: center;
 }
-.about-social-links .social-link a {
+
+.about-social-links .social-link {
     margin: 0 10px;
+}
+
+.about-social-links .social-link a {
     color: var(--primary-color);
 }
 .transition-objects {
@@ -546,8 +550,8 @@ footer {
         margin-top: 20px;
     }
 
-    .about-social-links .social-link {
+    .about-social-links .social-link a {
         font-size: 2rem;
-        margin: 0 20px;
+        margin: 0 10px;
     }
 }
