@@ -14,6 +14,7 @@
     --primary-color: #161953;
     --secondary-color: #ffffff;
     --secondary-darken-color: #aeaeae;
+    --header-color: #777ab99f;
 }
 
 html {
@@ -44,7 +45,7 @@ header {
 
 .site-logo-container {
     font-size: 1.5rem;
-    background-color: #777ab99f;
+    background-color: var(--header-color);
     position: absolute;
     top: 0;
     left: 50px;
@@ -52,6 +53,7 @@ header {
     letter-spacing: 2px;
 }
 .site-logo-container a {
+    padding: 25% 0;
     color: var(--secondary-color);
 }
 
@@ -216,6 +218,7 @@ main {
     justify-content: center;
     align-items: center;
     color: var(--primary-color);
+    overflow: hidden;
 }
 
 .about {
@@ -391,4 +394,109 @@ footer {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+}
+
+@media screen and (min-width: 800px) {
+    .menu-icon-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 60%;
+    }
+    #bg-vid {
+        width: 100vw;
+        height: 100vh;
+        object-fit: contiain;
+    }
+    header {
+        background-color: var(--header-color);
+        padding: 0;
+        margin: 0;
+    }
+    header nav {
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .site-logo-container {
+        background: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 0;
+        font-size: 2rem;
+    }
+    header nav ul {
+        align-items: center;
+        position: absolute;
+        display: none;
+    }
+    .menu-icon-container svg {
+        color: var(--secondary-color);
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .social-links {
+        display: none;
+    }
+
+    /* home page clock css */
+    .actual-clock {
+        display: none;
+    }
+    .clock wow-image {
+        display: none;
+    }
+
+    /* about section css */
+    .about {
+        width: 100%;
+    }
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about p {
+        font-size: 1.5rem;
+    }
+
+    .about-subscribe {
+        font-size: 1.5rem;
+    }
+
+    #subscribe-form {
+        width: 100%;
+    }
+
+    #subscribe-form label[for='email'] {
+        padding: 0 20px;
+    }
+    .input-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .input-container input {
+        width: 100%;
+    }
+    .input-container button {
+        width: 100%;
+        height: 36px;
+        margin-top: 20px;
+    }
+
+    .about-social-links .social-link {
+        font-size: 2rem;
+        margin: 0 20px;
+    }
 }

@@ -14,7 +14,6 @@ const scrollDown = () => {
 const windowScrollEvents = () => {
     let scrollTop = document.documentElement.scrollTop;
     if (scrollTop >= 180) {
-        console.log(document.getElementById('scroll-down-btn'));
         document
             .getElementById('scroll-down-btn')
             .classList.replace('down-arrow-invisible', 'down-arrow-visible');
