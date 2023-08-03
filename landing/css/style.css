@@ -70,6 +70,15 @@ header ul {
     align-items: flex-end;
 }
 
+.display-nav {
+    right: 0;
+    opacity: 1;
+}
+.hide-nav {
+    right: -100vw;
+    opacity: 0;
+}
+
 .site-nav-btn a {
     margin-left: 40px;
     font-size: 1.2rem;
@@ -400,6 +409,9 @@ footer {
     .menu-icon-container {
         display: none;
     }
+    .nav-close-btn {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -420,6 +432,7 @@ footer {
         padding: 0 20px;
         display: flex;
         justify-content: space-between;
+        position: relative;
         align-items: center;
     }
     .site-logo-container {
@@ -434,16 +447,54 @@ footer {
         left: 0;
         font-size: 2rem;
     }
-    header nav ul {
-        align-items: center;
-        position: absolute;
-        display: none;
+    .menu-icon-container {
+        background: none;
+        border: none;
+        outline: none;
     }
     .menu-icon-container svg {
         color: var(--secondary-color);
         width: 50px;
         height: 50px;
         padding: 10px;
+    }
+    header nav ul {
+        margin: 0;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--primary-color);
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        transition: opacity 0.2s linear, right 0.2s linear;
+    }
+    .nav-close-btn {
+        width: 100%;
+        height: 100px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .nav-close-btn svg {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        color: var(--secondary-color);
+    }
+
+    .site-nav-btn {
+        margin-top: 20px;
+    }
+
+    .site-nav-btn a {
+        margin: 0;
+        padding: 20px;
+        font-size: 2rem;
         display: inline-block;
     }
 

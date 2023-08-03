@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <link rel="shortcut icon" href="./images/icon2.png" type="image/png" />
+
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +17,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="./css/style.css" />
 
-        <title>Hero Page</title>
+        <title>Beaches - A Demo Page</title>
     </head>
     <body>
         <!-- Background video -->
@@ -27,34 +29,58 @@
                 <div class="site-logo-container">
                     <a href="#home">Beaches</a>
                 </div>
-                <ul>
+                <ul id="site-navigation">
+                    <div class="nav-close-btn" id="nav-close-btn">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-x"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            ></path>
+                            <path d="M18 6l-12 12"></path>
+                            <path d="M6 6l12 12"></path>
+                        </svg>
+                    </div>
                     <li class="site-nav-btn"><a href="#home">Home</a></li>
                     <li class="site-nav-btn">
                         <a href="#about-container">Subscribe</a>
                     </li>
                 </ul>
                 <div class="menu-icon-container">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-menu-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
+                    <div id="nav-open-btn">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-menu-2"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
                             fill="none"
-                        ></path>
-                        <path d="M4 6l16 0"></path>
-                        <path d="M4 12l16 0"></path>
-                        <path d="M4 18l16 0"></path>
-                    </svg>
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            ></path>
+                            <path d="M4 6l16 0"></path>
+                            <path d="M4 12l16 0"></path>
+                            <path d="M4 18l16 0"></path>
+                        </svg>
+                    </div>
                 </div>
             </nav>
         </header>
