@@ -226,7 +226,6 @@ main {
     justify-content: center;
     align-items: center;
     color: var(--primary-color);
-    overflow: hidden;
 }
 
 .about {
@@ -254,6 +253,7 @@ main {
 .about-subscribe {
     font-weight: 400;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 #subscribe-form {
@@ -355,17 +355,17 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 60px;
+    height: auto;
 }
 
 .copyright-container {
     width: 100%;
-    height: 50px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--font-roboto);
+    padding-bottom: 20px;
 }
 
 .p-copy,
@@ -419,9 +419,9 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-    html {
+    /* html {
         font-size: 60%;
-    }
+    } */
     #bg-vid {
         width: 100vw;
         height: 100vh;
@@ -506,6 +506,15 @@ footer {
         display: none;
     }
 
+    .home-text-container h1 {
+        font-size: 2.5rem;
+        margin-top: 0.8rem;
+    }
+
+    .home-text-container p:nth-child(3) {
+        letter-spacing: 8px;
+    }
+
     /* home page clock css */
     .actual-clock {
         display: none;
@@ -515,27 +524,37 @@ footer {
     }
 
     /* about section css */
+    #about-container {
+        height: auto;
+    }
+
     .about {
         width: 100%;
+        height: 100%;
+        padding: 100px 20px 50px 20px;
     }
+
     .about-title {
         font-size: 2.5rem;
     }
 
     .about p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .about-subscribe {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        width: 85%;
     }
 
     #subscribe-form {
         width: 100%;
+        margin-top: 40px;
     }
 
     #subscribe-form label[for='email'] {
         padding: 0 20px;
+        font-size: 1.2rem;
     }
     .input-container {
         flex-direction: column;
@@ -543,15 +562,43 @@ footer {
     }
     .input-container input {
         width: 100%;
+        font-size: 1rem;
+        height: 50px;
     }
     .input-container button {
         width: 100%;
         height: 36px;
         margin-top: 20px;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        height: 50px;
     }
 
     .about-social-links .social-link a {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 0 10px;
+    }
+
+    footer {
+        align-items: center;
+        flex-direction: column;
+    }
+    .copyright-container {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px 0 60px 0;
+    }
+    .p-copy,
+    .p-author {
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+    #scroll-top-btn {
+        position: absolute;
+        bottom: 0;
     }
 }
