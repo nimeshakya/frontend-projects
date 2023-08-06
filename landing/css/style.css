@@ -202,6 +202,7 @@ main {
     color: var(--secondary-color);
     background: none;
     transition: opacity 1s linear, transform 0.5s ease-out;
+    border-radius: 5px;
 }
 .down-arrow-invisible {
     opacity: 0;
@@ -292,6 +293,7 @@ input {
     padding: 10px 10px;
     border: none;
     border: solid 1px var(--primary-color);
+    border-radius: 5px;
 }
 
 .input-container input:hover {
@@ -311,6 +313,7 @@ input {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border: none;
+    border-radius: 5px;
 }
 
 .input-container button:hover {
@@ -400,6 +403,9 @@ footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
 }
 
 #scroll-top-btn:hover {
