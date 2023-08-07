@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+:root {
+    --pastel-blue: #c1d3fe;
+    --primary-text: #6b7c85;
+    --pastel-bg: #f8f7ff;
+
+    --primary-font: 'Montserrat', sans-serif;
+}
+
+main {
+    background-color: var(--pastel-bg);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--primary-font);
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.app-container form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    color: var(--primary-text);
+}
+
+.app-container form label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.app-container form input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--pastel-blue);
+    padding: 10px;
+    font-size: 1rem;
+    color: var(--primary-text);
+    font-weight: 100;
+}
+.app-container form input::placeholder {
+    opacity: 0.4;
+}
+
+.app-container form button {
+    width: 100%;
+    height: 40px;
+    background-color: var(--pastel-blue);
+    border-radius: 5px;
+    margin-top: 10px;
+    color: var(--pastel-bg);
+    font-size: 1.2rem;
+}
+.app-container form button:hover {
+    cursor: pointer;
+}
+
+.app-container h1 {
+    font-size: 1.5rem;
+    color: var(--primary-text);
+    text-align: left;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.app-container ul {
+    width: 100%;
+    padding: 20px;
+    color: var(--primary-text);
+}
+
+.app-container ul li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid var(--pastel-blue);
+    border-radius: 5px;
+    width: 100%;
+    height: 75px;
+    margin: 5px;
+    padding: 5px;
+}
