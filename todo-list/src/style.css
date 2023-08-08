@@ -110,6 +110,12 @@ main {
     width: 60%;
     padding: 20px 10px;
 }
+.task-name:hover {
+    cursor: pointer;
+}
+.task-complete {
+    text-decoration: line-through;
+}
 
 .task-action-btn {
     width: 50px;

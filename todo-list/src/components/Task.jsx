@@ -7,11 +7,34 @@ const Task = ({ task, taskArr, setTaskArr }) => {
                 return taskItem.id !== id;
             })
         );
+        if (task.completed) {
+            alert('Task Deleted!');
+        } else {
+            alert('Incomplete Task Deleted!');
+        }
+    };
+
+    const handleComplete = (id) => {
+        setTaskArr(
+            taskArr.map((taskItem) => {
+                if (taskItem.id === id) {
+                    taskItem.completed = !taskItem.completed;
+                }
+                return taskItem;
+            })
+        );
     };
 
     return (
         <li>
-            <p className='task-name'>{task.name}</p>
+            <p
+                className={`task-name ${task.completed ? 'task-complete' : ''}`}
+                onClick={() => {
+                    handleComplete(task.id);
+                }}
+            >
+                {task.name}
+            </p>
             <div className='task-action-container'>
                 <button className='task-action-btn'>
                     <svg
