@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const InputForm = () => {
+const InputForm = ({ taskArr, setTaskArr }) => {
+    const [currTask, setCurrTask] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let task = {
+            id: new Date().getUTCMilliseconds(),
+            name: currTask,
+            completed: false,
+            editing: false,
+        };
+
+        setTaskArr([...taskArr, task]);
+        console.log(task);
+    };
+
     return (
         <form>
             <label htmlFor='taskname'>Task Name: </label>
@@ -9,8 +24,12 @@ const InputForm = () => {
                 name='taskname'
                 id='taskname'
                 placeholder='Get groceries, wash dishes, finish assignment, etc.'
+                value={currTask}
+                onChange={(e) => setCurrTask(e.target.value)}
             />
-            <button type='submit'>Add Task</button>
+            <button type='submit' onClick={handleSubmit}>
+                Add Task
+            </button>
         </form>
     );
 };

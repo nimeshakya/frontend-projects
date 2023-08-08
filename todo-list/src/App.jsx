@@ -1,18 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import InputForm from './components/InputForm';
 import Task from './components/Task';
 
+const tasks = [
+    {
+        id: 0,
+        name: 'get groceries',
+        completed: false,
+        editing: false,
+    },
+    {
+        id: 1,
+        name: 'cook dinner',
+        completed: false,
+        editing: false,
+    },
+    {
+        id: 2,
+        name: 'finish assignments',
+        completed: false,
+        editing: false,
+    },
+];
+
 const App = () => {
+    const [taskArr, setTaskArr] = useState(tasks);
     return (
         <main>
             <div className='app-container'>
-                <InputForm />
+                <InputForm taskArr={taskArr} setTaskArr={setTaskArr} />
                 <h1>Tasks</h1>
                 <ul>
-                    <Task />
-                    <Task />
-                    <Task />
+                    {taskArr.map((task, index) => {
+                        return <Task key={index} task={task} />;
+                    })}
                 </ul>
             </div>
         </main>
