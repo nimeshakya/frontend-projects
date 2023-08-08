@@ -122,5 +122,6 @@ main {
 }
 
 .task-action-btn svg {
+    display: inline;
     color: var(--primary-text);
 }

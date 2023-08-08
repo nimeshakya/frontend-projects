@@ -1,8 +1,16 @@
 import React from 'react';
 
-const Task = ({ task }) => {
+const Task = ({ task, taskArr, setTaskArr }) => {
+    const handleDelete = (id) => {
+        setTaskArr(
+            taskArr.filter((taskItem) => {
+                return taskItem.id !== id;
+            })
+        );
+    };
+
     return (
-        <li id={task.id}>
+        <li>
             <p className='task-name'>{task.name}</p>
             <div className='task-action-container'>
                 <button className='task-action-btn'>
@@ -27,7 +35,10 @@ const Task = ({ task }) => {
                         <path d='M13.5 6.5l4 4'></path>
                     </svg>
                 </button>
-                <button className='task-action-btn'>
+                <button
+                    className='task-action-btn'
+                    onClick={() => handleDelete(task.id)}
+                >
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
                         class='icon icon-tabler icon-tabler-trash'
