@@ -59,7 +59,7 @@ const InputForm = ({
                 onChange={(e) => setCurrTask(e.target.value)}
                 required
             />
-            <button type='submit' onClick={handleSubmit}>
+            <button type='submit' onClick={handleSubmit} title='add task'>
                 {isEditingTask ? 'Edit' : 'Add Task'}
             </button>
         </form>

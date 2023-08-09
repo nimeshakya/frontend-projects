@@ -45,11 +45,7 @@ const App = () => {
 
     return (
         <main>
-            <Alert
-                actionTaken={actionTaken}
-                alertMsg={alertMsg}
-                setActionTaken={setActionTaken}
-            />
+            <h1 className='app-title'>To Do's</h1>
             <div className='app-container'>
                 <InputForm
                     taskArr={taskArr}
@@ -82,6 +78,11 @@ const App = () => {
                     })}
                 </ul>
             </div>
+            <Alert
+                actionTaken={actionTaken}
+                alertMsg={alertMsg}
+                setActionTaken={setActionTaken}
+            />
         </main>
     );
 };

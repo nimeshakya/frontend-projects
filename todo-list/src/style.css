@@ -28,23 +28,10 @@ main {
     position: relative;
 }
 
-.alert-msg-container {
-    position: fixed;
-    background-color: #91ff6f;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+.app-title {
     color: var(--primary-text);
-    z-index: 100;
-    transition: bottom 0.5s linear, opacity 0.5s linear;
-}
-.alert-msg-container-visible {
-    bottom: 0;
-    opacity: 1;
-}
-.alert-msg-container-invisible {
-    bottom: -100px;
-    opacity: 0;
+    margin-top: 20px;
+    display: none;
 }
 
 .app-container {
@@ -153,8 +140,35 @@ main {
     color: var(--primary-text);
 }
 
-@media screen and (min-width: '800px') {
+.alert-msg-container {
+    position: fixed;
+    background-color: #91ff6f;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: var(--primary-text);
+    z-index: 100;
+    transition: bottom 0.5s linear, opacity 0.5s linear;
+}
+.alert-msg-container-visible {
+    bottom: 0;
+    opacity: 1;
+}
+.alert-msg-container-invisible {
+    bottom: -100px;
+    opacity: 0;
+}
+
+@media screen and (min-width: 800px) {
+    .app-title {
+        display: inline;
+    }
     .app-container {
-        width: 50vw;
+        width: 75%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .app-container {
+        width: 50%;
     }
 }
