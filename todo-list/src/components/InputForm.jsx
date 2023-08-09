@@ -41,6 +41,7 @@ const InputForm = ({
                 };
 
                 setTaskArr([...taskArr, task]);
+                setCurrTask('');
                 setActionTaken(true);
                 setAlertMsg('Task Added!');
             }

@@ -10,7 +10,7 @@
 
 :root {
     --pastel-blue: #c1d3fe;
-    --primary-text: #6b7c85;
+    --primary-text: #5e7989;
     --pastel-bg: #f8f7ff;
 
     --primary-font: 'Montserrat', sans-serif;
@@ -66,7 +66,7 @@ main {
     padding: 10px;
     font-size: 1rem;
     color: var(--primary-text);
-    font-weight: 100;
+    font-weight: 400;
     margin-top: 5px;
 }
 .app-container form input::placeholder {
@@ -157,6 +157,21 @@ main {
 .alert-msg-container-invisible {
     bottom: -100px;
     opacity: 0;
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 60%;
+    }
+    .app-container ul li p {
+        width: 50%;
+    }
+    .app-container form input {
+        font-size: 1.2rem;
+    }
+    .task-action-btn {
+        margin: 0 2px;
+    }
 }
 
 @media screen and (min-width: 800px) {
