@@ -21,9 +21,30 @@ main {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     font-family: var(--primary-font);
+    position: relative;
+}
+
+.alert-msg-container {
+    position: fixed;
+    background-color: #91ff6f;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: var(--primary-text);
+    z-index: 100;
+    transition: bottom 0.5s linear, opacity 0.5s linear;
+}
+.alert-msg-container-visible {
+    bottom: 0;
+    opacity: 1;
+}
+.alert-msg-container-invisible {
+    bottom: -100px;
+    opacity: 0;
 }
 
 .app-container {

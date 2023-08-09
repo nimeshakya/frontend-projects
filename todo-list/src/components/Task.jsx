@@ -1,6 +1,15 @@
 import React from 'react';
 
-const Task = ({ task, taskArr, setTaskArr }) => {
+const Task = ({
+    task,
+    taskArr,
+    setTaskArr,
+    setActionTaken,
+    setAlertMsg,
+    setCurrTask,
+    isEditingTask,
+    setIsEditingTask,
+}) => {
     const handleDelete = (id) => {
         setTaskArr(
             taskArr.filter((taskItem) => {
@@ -8,9 +17,11 @@ const Task = ({ task, taskArr, setTaskArr }) => {
             })
         );
         if (task.completed) {
-            alert('Task Deleted!');
+            setActionTaken(true);
+            setAlertMsg('Task Deleted!');
         } else {
-            alert('Incomplete Task Deleted!');
+            setActionTaken(true);
+            setAlertMsg('Incomplete Task Deleted');
         }
     };
 
@@ -25,6 +36,24 @@ const Task = ({ task, taskArr, setTaskArr }) => {
         );
     };
 
+    const handleEdit = (id) => {
+        if (!isEditingTask) {
+            taskArr = taskArr.filter((taskItem) => {
+                if (taskItem.id === id) {
+                    if (taskItem.completed === true) {
+                        setActionTaken(true);
+                        setAlertMsg('Completed task cannot be edited!');
+                    } else {
+                        setCurrTask(taskItem.name);
+                        taskItem.editing = true;
+                        setIsEditingTask(true);
+                    }
+                }
+                return taskItem;
+            });
+        }
+    };
+
     return (
         <li>
             <p
@@ -36,7 +65,12 @@ const Task = ({ task, taskArr, setTaskArr }) => {
                 {task.name}
             </p>
             <div className='task-action-container'>
-                <button className='task-action-btn'>
+                <button
+                    className='task-action-btn'
+                    onClick={() => {
+                        handleEdit(task.id);
+                    }}
+                >
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
                         class='icon icon-tabler icon-tabler-pencil'

@@ -1,19 +1,50 @@
 import React, { useEffect, useState } from 'react';
 
-const InputForm = ({ taskArr, setTaskArr }) => {
-    const [currTask, setCurrTask] = useState('');
-
+const InputForm = ({
+    taskArr,
+    setTaskArr,
+    setActionTaken,
+    setAlertMsg,
+    currTask,
+    setCurrTask,
+    isEditingTask,
+    setIsEditingTask,
+}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        let task = {
-            id: new Date().getUTCMilliseconds(),
-            name: currTask,
-            completed: false,
-            editing: false,
-        };
+        if (isEditingTask) {
+            if (currTask === '') {
+                setActionTaken(true);
+                setAlertMsg('No task edited!');
+            } else {
+                taskArr = taskArr.filter((taskItem) => {
+                    if (taskItem.editing) {
+                        taskItem.name = currTask;
+                        taskItem.editing = false;
+                    }
+                });
+                setCurrTask('');
+                setIsEditingTask(false);
+                setActionTaken(true);
+                setAlertMsg('Task Edited!');
+            }
+        } else {
+            if (currTask === '') {
+                setActionTaken(true);
+                setAlertMsg('No task added!');
+            } else {
+                let task = {
+                    id: new Date().getUTCMilliseconds(),
+                    name: currTask,
+                    completed: false,
+                    editing: false,
+                };
 
-        setTaskArr([...taskArr, task]);
-        console.log(task);
+                setTaskArr([...taskArr, task]);
+                setActionTaken(true);
+                setAlertMsg('Task Added!');
+            }
+        }
     };
 
     return (
@@ -26,9 +57,10 @@ const InputForm = ({ taskArr, setTaskArr }) => {
                 placeholder='Get groceries, wash dishes, finish assignment, etc.'
                 value={currTask}
                 onChange={(e) => setCurrTask(e.target.value)}
+                required
             />
             <button type='submit' onClick={handleSubmit}>
-                Add Task
+                {isEditingTask ? 'Edit' : 'Add Task'}
             </button>
         </form>
     );
