@@ -152,3 +152,9 @@ main {
     display: inline;
     color: var(--primary-text);
 }
+
+@media screen and (min-width: '800px') {
+    .app-container {
+        width: 50vw;
+    }
+}
