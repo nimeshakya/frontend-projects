@@ -4,26 +4,7 @@ import InputForm from './components/InputForm';
 import Task from './components/Task';
 import Alert from './components/Alert';
 
-const tasks = [
-    {
-        id: 0,
-        name: 'get groceries',
-        completed: false,
-        editing: false,
-    },
-    {
-        id: 1,
-        name: 'cook dinner',
-        completed: false,
-        editing: false,
-    },
-    {
-        id: 2,
-        name: 'finish assignments',
-        completed: false,
-        editing: false,
-    },
-];
+const tasks = JSON.parse(localStorage.getItem('taskArr'));
 
 const App = () => {
     const [currTask, setCurrTask] = useState('');
@@ -31,19 +12,20 @@ const App = () => {
     const [actionTaken, setActionTaken] = useState(false);
     const [alertMsg, setAlertMsg] = useState('');
     const [isEditingTask, setIsEditingTask] = useState(false);
-    const [editingTask, setEditingTask] = useState({});
-
+    // ref task input field
     const taskInput = useRef(null);
 
     // alert disappear after 3 seconds
     useEffect(() => {
+        localStorage.setItem('taskArr', JSON.stringify(taskArr));
+        console.log(tasks);
         const timeId = setTimeout(() => {
             setActionTaken(false);
         }, 3000);
         return () => {
             clearTimeout(timeId);
         };
-    }, [actionTaken]);
+    }, [actionTaken, taskArr]);
 
     return (
         <main>
