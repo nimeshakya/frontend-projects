@@ -9,6 +9,7 @@ const InputForm = ({
     setCurrTask,
     isEditingTask,
     setIsEditingTask,
+    taskInput,
 }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -58,6 +59,7 @@ const InputForm = ({
                 placeholder='Get groceries, wash dishes, finish assignment, etc.'
                 value={currTask}
                 onChange={(e) => setCurrTask(e.target.value)}
+                ref={taskInput}
                 required
             />
             <button type='submit' onClick={handleSubmit} title='add task'>

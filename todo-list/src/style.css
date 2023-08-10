@@ -16,6 +16,10 @@
     --primary-font: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 main {
     background-color: var(--pastel-bg);
     width: 100%;

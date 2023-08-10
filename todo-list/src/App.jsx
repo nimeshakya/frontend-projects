@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import InputForm from './components/InputForm';
 import Task from './components/Task';
@@ -33,6 +33,8 @@ const App = () => {
     const [isEditingTask, setIsEditingTask] = useState(false);
     const [editingTask, setEditingTask] = useState({});
 
+    const taskInput = useRef(null);
+
     // alert disappear after 3 seconds
     useEffect(() => {
         const timeId = setTimeout(() => {
@@ -56,6 +58,7 @@ const App = () => {
                     setCurrTask={setCurrTask}
                     isEditingTask={isEditingTask}
                     setIsEditingTask={setIsEditingTask}
+                    taskInput={taskInput}
                 />
                 <h1>Tasks</h1>
                 <ul>
@@ -73,6 +76,7 @@ const App = () => {
                                 setCurrTask={setCurrTask}
                                 isEditingTask={isEditingTask}
                                 setIsEditingTask={setIsEditingTask}
+                                taskInput={taskInput}
                             />
                         );
                     })}

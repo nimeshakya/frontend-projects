@@ -9,6 +9,7 @@ const Task = ({
     setCurrTask,
     isEditingTask,
     setIsEditingTask,
+    taskInput,
 }) => {
     const handleDelete = (id) => {
         setTaskArr(
@@ -47,6 +48,7 @@ const Task = ({
                         setCurrTask(taskItem.name);
                         taskItem.editing = true;
                         setIsEditingTask(true);
+                        taskInput.current.focus();
                     }
                 }
                 return taskItem;
