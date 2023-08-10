@@ -5,10 +5,11 @@ import Task from './components/Task';
 import Alert from './components/Alert';
 
 const tasks = JSON.parse(localStorage.getItem('taskArr'));
+console.log(tasks);
 
 const App = () => {
     const [currTask, setCurrTask] = useState('');
-    const [taskArr, setTaskArr] = useState(tasks !== undefined ? tasks : []);
+    const [taskArr, setTaskArr] = useState(tasks !== null ? tasks : []);
     const [actionTaken, setActionTaken] = useState(false);
     const [alertMsg, setAlertMsg] = useState('');
     const [isEditingTask, setIsEditingTask] = useState(false);
