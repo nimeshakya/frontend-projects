@@ -8,7 +8,7 @@ const tasks = JSON.parse(localStorage.getItem('taskArr'));
 
 const App = () => {
     const [currTask, setCurrTask] = useState('');
-    const [taskArr, setTaskArr] = useState(tasks);
+    const [taskArr, setTaskArr] = useState(tasks !== undefined ? tasks : []);
     const [actionTaken, setActionTaken] = useState(false);
     const [alertMsg, setAlertMsg] = useState('');
     const [isEditingTask, setIsEditingTask] = useState(false);
