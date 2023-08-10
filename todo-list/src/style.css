@@ -163,6 +163,17 @@ main {
     opacity: 0;
 }
 
+.zero-task {
+    text-align: center;
+    color: var(--pastel-blue);
+}
+.zero-task h1 {
+    margin-bottom: 5px;
+}
+.zero-task p {
+    font-weight: 600;
+}
+
 @media screen and (max-width: 400px) {
     html {
         font-size: 60%;

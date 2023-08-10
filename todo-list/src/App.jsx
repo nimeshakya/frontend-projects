@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import InputForm from './components/InputForm';
 import Task from './components/Task';
 import Alert from './components/Alert';
+import ZeroTask from './components/ZeroTask';
 
 const tasks = JSON.parse(localStorage.getItem('taskArr'));
 console.log(tasks);
@@ -70,6 +71,7 @@ const App = () => {
                 alertMsg={alertMsg}
                 setActionTaken={setActionTaken}
             />
+            {taskArr.length === 0 && <ZeroTask />}
         </main>
     );
 };
